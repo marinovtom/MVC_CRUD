@@ -1,5 +1,5 @@
 # MVC_CRUD
 
-| Company                               |
+| Company     |                         |
 |---------------------------------------|
 | Name | Creation Date |
