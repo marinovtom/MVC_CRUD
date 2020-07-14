@@ -1,10 +1,16 @@
 # MVC_CRUD
 
-..* Company
+* Company
 | Name | Creation Date  |
 |------|----------------|
-| some name | some date |
+| String | DateTime |
 
-..* Office
+* Office
 | Country | City | Street | Street number | Documents | isHQ |
 | ------- | ---- | ------ | ------------- | --------- | ---- |
+| String | String | String | Short | byte[]/String | Boolean | 
+
+* Employee
+| First name | Last name | Starting date | Salary | Vacation days | Experience level | Image |
+| --- | --- | --- | --- | --- | --- | --- |
+| String | String | DateTime | Int | Short | Enum | byte[]/String |
