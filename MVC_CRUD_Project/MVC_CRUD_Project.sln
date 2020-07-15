@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_CRUD_Project", "MVC_CRU
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_CRUD_Project.Tests", "..\MVC_CRUD_Project.Tests\MVC_CRUD_Project.Tests.csproj", "{BC5DA09F-9A20-430F-8C1C-E50695210811}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLibrary", "..\DataLibrary\DataLibrary.csproj", "{CAFB6A1E-ABCA-4FF6-85B6-FE3825C01BC9}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MVC_CRUD_DB", "..\MVC_CRUD_DB\MVC_CRUD_DB.sqlproj", "{1C278786-7128-4174-B25F-1A45A643D848}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,16 @@ Global
 		{BC5DA09F-9A20-430F-8C1C-E50695210811}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC5DA09F-9A20-430F-8C1C-E50695210811}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC5DA09F-9A20-430F-8C1C-E50695210811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAFB6A1E-ABCA-4FF6-85B6-FE3825C01BC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAFB6A1E-ABCA-4FF6-85B6-FE3825C01BC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAFB6A1E-ABCA-4FF6-85B6-FE3825C01BC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAFB6A1E-ABCA-4FF6-85B6-FE3825C01BC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C278786-7128-4174-B25F-1A45A643D848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C278786-7128-4174-B25F-1A45A643D848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C278786-7128-4174-B25F-1A45A643D848}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1C278786-7128-4174-B25F-1A45A643D848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C278786-7128-4174-B25F-1A45A643D848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C278786-7128-4174-B25F-1A45A643D848}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
