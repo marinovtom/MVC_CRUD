@@ -19,11 +19,13 @@
 | Primary Key | String | String | DateTime | Int | Short | Enum | byte[]/String |
 
 * Office_Employee
+
 | Id | Office | Employee |
 | --- | --- | --- |
 | Primary Key | Foreign Key | Foreign Key |
 
 * Documents
+
 | Id | Document | Office |
 | --- | --- | --- |
 | Primary Key | byte[]/String | Foreign Key |
