@@ -15,5 +15,5 @@
 * Employee
 
 | Id | First name | Last name | Starting date | Salary | Vacation days | Experience level | Image |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ---- | ------ | ------ | ------- | ----------- | ------ | ------ | ----------- | ------- |
 | Primary Key | String | String | DateTime | Int | Short | Enum | byte[]/String |
