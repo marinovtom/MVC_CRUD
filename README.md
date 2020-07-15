@@ -12,14 +12,8 @@
 | --- | ------- | ---- | ------ | ------------- | ---- | --- |
 | Primary Key | String | String | String | Short | Boolean | Foreign Key |
 
+* Employee
 
-
-* Office_Employee
-| Id | Office | Employee |
-| --- | --- | --- |
-| Primary Key | Foreign Key | Foreign Key |
-
-* Documents
-| Id | Document | Office |
-| --- | --- | --- |
-| Primary Key | byte[]/String | Foreign Key |
+| Id | First name | Last name | Starting date | Salary | Vacation days | Experience level | Image |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Primary Key | String | String | DateTime | Int | Short | Enum | byte[]/String |
