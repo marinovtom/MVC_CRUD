@@ -10,7 +10,7 @@
 
 | Id | Country | City | Street | Street number | isHQ | Company |
 | --- | ------- | ---- | ------ | ------------- | ---- | --- |
-| Primary Key | String | String | String | Short | byte[]/String | Boolean | Foreign Key |
+| Primary Key | String | String | String | Short | Boolean | Foreign Key |
 
 * Employee
 
