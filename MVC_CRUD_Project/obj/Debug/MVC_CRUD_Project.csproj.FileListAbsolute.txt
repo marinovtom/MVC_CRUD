@@ -85,3 +85,5 @@ D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_Project\obj\Debug\MVC_CRUD_Project.csproj.CoreC
 D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_Project\obj\Debug\MVC_CRUD_Project.csproj.CopyComplete
 D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_Project\obj\Debug\MVC_CRUD_Project.dll
 D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_Project\obj\Debug\MVC_CRUD_Project.pdb
+D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_Project\bin\DataLibrary.dll
+D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_Project\bin\DataLibrary.pdb

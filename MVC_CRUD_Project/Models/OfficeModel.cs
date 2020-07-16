@@ -12,5 +12,6 @@ namespace MVC_CRUD_Project.Models
         public string Street { get; set; }
         public short StreetNumber { get; set; }
         public Boolean IsHQ { get; set; }
+        public CompanyModel Company { get; set; }
     }
 }
