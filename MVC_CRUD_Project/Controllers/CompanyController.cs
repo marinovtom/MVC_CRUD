@@ -66,6 +66,7 @@ namespace MVC_CRUD_Project.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(CompanyModel company)
         {
             if (ModelState.IsValid)

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace MVC_CRUD_Project.Models
+namespace DataLibrary.Models
 {
     public class OfficeModel
     {
@@ -13,8 +13,7 @@ namespace MVC_CRUD_Project.Models
         public string City { get; set; }
         public string Street { get; set; }
         public short StreetNumber { get; set; }
-        public Boolean IsHQ { get; set; }
-        [ForeignKey("Company")]
-        public CompanyModel Company { get; set; }
+        public Boolean isHQ { get; set; }
+        public int Company { get; set; }
     }
 }

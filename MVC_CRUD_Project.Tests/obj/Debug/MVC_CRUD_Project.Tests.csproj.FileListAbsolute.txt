@@ -44,3 +44,5 @@ D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_Project.Tests\obj\Debug\MVC_CRUD_Project.Tests.
 D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_Project.Tests\obj\Debug\MVC_CRUD_Project.Tests.pdb
 D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_Project.Tests\bin\Debug\DataLibrary.dll
 D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_Project.Tests\bin\Debug\DataLibrary.pdb
+D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_Project.Tests\bin\Debug\Dapper.dll
+D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_Project.Tests\bin\Debug\Dapper.xml

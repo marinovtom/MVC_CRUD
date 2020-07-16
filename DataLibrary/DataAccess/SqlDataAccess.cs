@@ -55,5 +55,12 @@ namespace DataLibrary.DataAccess
                 return cnn.QueryFirst<CompanyModel>(sql, args);
             }
         }
+        public static OfficeModel GetOfficeForPrimaryKey(string sql, Object args)
+        {
+            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
+            {
+                return cnn.QueryFirst<OfficeModel>(sql, args);
+            }
+        }
     }
 }
