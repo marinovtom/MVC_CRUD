@@ -57,5 +57,14 @@ namespace DataLibrary.BusinessLogic
 
             return SqlDataAccess.UpdateData(sql, company);
         }
+
+        public static int GetCompanyIdForName(string Name)
+        {
+            var args = new { Name = Name };
+
+            string sql = "select Id from dbo.Company where Name = @Name";
+
+            return SqlDataAccess.GetIdForName(sql, args);
+        }
     }
 }

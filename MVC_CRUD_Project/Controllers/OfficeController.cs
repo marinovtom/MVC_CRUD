@@ -22,6 +22,18 @@ namespace MVC_CRUD_Project.Controllers
             ViewBag.CompanyList = new SelectList(companyIds);
         }
 
+        private void loadCompanyNames()
+        {
+            List<string> companyNames = new List<string>();
+            var data = CompanyProcessor.LoadCompanies();
+            foreach (var item in data)
+            {
+                companyNames.Add(item.Name);
+            }
+
+            ViewBag.CompanyList = new SelectList(companyNames);
+        }
+
         // GET: Office
         public ActionResult Index()
         {
@@ -55,7 +67,7 @@ namespace MVC_CRUD_Project.Controllers
 
         public ActionResult Create()
         {
-            loadCompanyIds();
+            loadCompanyNames();
 
             return View();
         }
@@ -64,7 +76,7 @@ namespace MVC_CRUD_Project.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(OfficeModel office)
         {
-            
+            office.Company.Id = CompanyProcessor.GetCompanyIdForName(office.Company.Name);
             //if (ModelState.IsValid)
             {
                 int createdOffice = OfficeProcessor.CreateOffice(office.Country, office.City, office.Street, office.StreetNumber, office.IsHQ, office.Company.Id);
@@ -84,7 +96,7 @@ namespace MVC_CRUD_Project.Controllers
 
         public ActionResult Edit(int id)
         {
-            loadCompanyIds();
+            loadCompanyNames();
 
             var data = OfficeProcessor.getOfficeForPrimaryKey(id);
             OfficeModel currentOffice = new OfficeModel
@@ -104,6 +116,8 @@ namespace MVC_CRUD_Project.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(OfficeModel office)
         {
+            office.Company.Id = CompanyProcessor.GetCompanyIdForName(office.Company.Name);
+
             //if (ModelState.IsValid)
             {
                 int updatedOffice = OfficeProcessor.UpdateOffice(office.Id, office.Country, office.City, office.Street, office.StreetNumber, office.IsHQ, office.Company.Id);
@@ -111,7 +125,7 @@ namespace MVC_CRUD_Project.Controllers
                 return RedirectToAction("ListAll");
             }
 
-            return View();
+            //return View();
         }
     }
 }

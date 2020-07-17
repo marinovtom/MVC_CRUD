@@ -4,3 +4,7 @@ D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_DB\bin\Debug\MVC_CRUD_DB.pdb
 D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_DB\obj\Debug\MVC_CRUD_DB.sqlprojAssemblyReference.cache
 D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_DB\obj\Debug\MVC_CRUD_DB.dll
 D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_DB\obj\Debug\MVC_CRUD_DB.pdb
+D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_DB\obj\Debug\Model.xml
+D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_DB\obj\Debug\refactor.xml
+D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_DB\obj\Debug\postdeploy.sql
+D:\Me\MVC_CRUD\MVC_CRUD\MVC_CRUD_DB\obj\Debug\predeploy.sql

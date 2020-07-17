@@ -38,7 +38,18 @@ namespace DataLibrary.DataAccess
         {
             using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
             {
-                return cnn.Execute(sql, args);
+                int result;
+
+                try
+                {
+                    result = cnn.Execute(sql, args);
+                } 
+                catch (SqlException)
+                {
+                    return 0;
+                }
+
+                return result;
             }
         }
         public static int UpdateData<T>(string sql, T data)
@@ -60,6 +71,22 @@ namespace DataLibrary.DataAccess
             using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
             {
                 return cnn.QueryFirst<OfficeModel>(sql, args);
+            }
+        }
+
+        public static int GetIdForName(string sql, Object args)
+        {
+            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
+            {
+                return cnn.QueryFirst<int>(sql, args);
+            }
+        }
+
+        public static EmployeeModel GetEmployeeForPrimaryKey(string sql, Object args)
+        {
+            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
+            {
+                return cnn.QueryFirst<EmployeeModel>(sql, args);
             }
         }
     }
