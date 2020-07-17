@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[OfficeEmployee]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Office] INT NOT NULL FOREIGN KEY REFERENCES Office(Id), 
+    [Employee] INT NOT NULL FOREIGN KEY REFERENCES Employee(Id)
+)

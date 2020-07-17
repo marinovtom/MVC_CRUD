@@ -1,6 +1,5 @@
 D:\Me\MVC_CRUD\MVC_CRUD\DataLibrary\bin\Debug\DataLibrary.dll
 D:\Me\MVC_CRUD\MVC_CRUD\DataLibrary\bin\Debug\DataLibrary.pdb
-D:\Me\MVC_CRUD\MVC_CRUD\DataLibrary\obj\Debug\DataLibrary.csprojAssemblyReference.cache
 D:\Me\MVC_CRUD\MVC_CRUD\DataLibrary\obj\Debug\DataLibrary.csproj.CoreCompileInputs.cache
 D:\Me\MVC_CRUD\MVC_CRUD\DataLibrary\obj\Debug\DataLibrary.dll
 D:\Me\MVC_CRUD\MVC_CRUD\DataLibrary\obj\Debug\DataLibrary.pdb

@@ -37,6 +37,8 @@ namespace MVC_CRUD_Project.Controllers
         // GET: Office
         public ActionResult Index()
         {
+            ViewBag.Title = "Office page";
+
             return View();
         }
 

@@ -13,6 +13,8 @@ namespace MVC_CRUD_Project.Controllers
         // GET: Company
         public ActionResult Index()
         {
+            ViewBag.Title = "Company page";
+
             return View();
         }
 
