@@ -58,10 +58,10 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.Company.Id, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.LabelFor(model => model.Company, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
             <div class="checkbox">
-                @Html.DropDownListFor(model => model.Company.Name, (SelectList)ViewBag.CompanyList)
+                @Html.DropDownListFor(model => model.Company.Name, (SelectList)ViewBag.CompanyList, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Company.Id, "", new { @class = "text-danger" })
             </div>
         </div>
