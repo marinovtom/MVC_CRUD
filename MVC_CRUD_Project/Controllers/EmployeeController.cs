@@ -17,8 +17,10 @@ namespace MVC_CRUD_Project.Controllers
             return View();
         }
 
-        public ActionResult ListAll()
+        public ActionResult ListAll(string name = null)
         {
+            ViewBag.DeleteError = TempData["ErrorMessage"];
+
             List<EmployeeModel> employees = new List<EmployeeModel>();
             var data = EmployeeProcessor.LoadAllEmployees();
             foreach (var item in data)
@@ -33,6 +35,14 @@ namespace MVC_CRUD_Project.Controllers
                     VacationDays = item.VacationDays,
                     ExperienceLevel = item.ExperienceLevel
                 });
+            }
+
+            if (name != null)
+            {
+                string nameLowerCase = name.ToLower();
+
+                employees = employees.Select(e => e).Where(e => e.FirstName.ToLower().Contains(nameLowerCase) || 
+                                                                e.LastName.ToLower().Contains(nameLowerCase)).ToList();
             }
 
             return View(employees);
@@ -90,6 +100,10 @@ namespace MVC_CRUD_Project.Controllers
         public ActionResult Delete(int Id)
         {
             int deletedEmployee = EmployeeProcessor.DeleteEmployee(Id);
+            if (deletedEmployee == 0)
+            {
+                TempData["ErrorMessage"] = "Could not delete record!";
+            }
 
             return RedirectToAction("ListAll");
         }

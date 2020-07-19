@@ -18,9 +18,11 @@ namespace MVC_CRUD_Project.Controllers
             return View();
         }
 
-        public ActionResult ListAll(string name)
+        public ActionResult ListAll(string name = null)
         {
             ViewBag.Message = "List all Companies";
+
+            ViewBag.DeleteError = TempData["ErrorMessage"];
 
             var data = CompanyProcessor.LoadCompanies();
             List<CompanyModel> companies = new List<CompanyModel>();
@@ -32,7 +34,7 @@ namespace MVC_CRUD_Project.Controllers
 
             if(name != null)
             {
-                companies = companies.Select(c => c).Where(c => c.Name.Contains(name)).ToList();
+                companies = companies.Select(c => c).Where(c => c.Name.ToLower().Contains(name.ToLower())).ToList();
             }
 
             return View(companies);
@@ -60,6 +62,10 @@ namespace MVC_CRUD_Project.Controllers
         public ActionResult Delete(int id)
         {
             int deletedCompany = CompanyProcessor.DeleteCompany(id);
+            if (deletedCompany == 0)
+            {
+                TempData["ErrorMessage"] = "Could not delete record!";
+            }
 
             return RedirectToAction("ListAll");
         }

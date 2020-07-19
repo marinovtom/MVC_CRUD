@@ -39,6 +39,17 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/customScripts")
     @RenderSection("scripts", required: false)
+
+    @if (ViewBag.DeleteError != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                alert("@ViewBag.DeleteError");
+            };
+        </script>
+    }
+
 </body>
 </html>

@@ -1,16 +1,22 @@
 ﻿@model IEnumerable<MVC_CRUD_Project.Models.OfficeModel>
 
 @{
-    ViewBag.Title = "ListAll";
+    ViewBag.Title = "All Offices";
 }
 
-<h2>ListAll</h2>
+    <h2>@ViewBag.Title</h2>
 
-<p class="btn-default">
-    @Html.ActionLink("Create New", "Create")
+<p class="btn btn-default stretched-link">
+    @Html.ActionLink("Create New", "Create", null, new { @style = "text-decoration: none;" })
 </p>
+<form asp-controller="Company" asp-action="ListAll" method="get">
+    <div class="form-group">
+        Address: <input type="text" name="address" class="form-control" />
+        <input type="submit" value="Filter" class="btn btn-primary" />
+    </div>
+</form>
 <table class="table">
-    <tr>
+    <tr class="active">
         <th>
             @Html.DisplayNameFor(model => model.Country)
         </th>
@@ -32,32 +38,33 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Country)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.City)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Street)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.StreetNumber)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.IsHQ)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Company.Name)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Employees", "Employees", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Street)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StreetNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsHQ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Company.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-default stretched-link" }) 
+                @Html.ActionLink("Employees", "Employees", new { id = item.Id }, new { @class = "btn btn-default stretched-link" }) 
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger stretched-link" })
+            </td>
+        </tr>
+    }
 
 </table>

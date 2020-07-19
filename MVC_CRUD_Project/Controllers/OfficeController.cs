@@ -42,9 +42,11 @@ namespace MVC_CRUD_Project.Controllers
             return View();
         }
 
-        public ActionResult ListAll()
+        public ActionResult ListAll(string address = null)
         {
             ViewBag.Message = "List all offices";
+
+            ViewBag.DeleteError = TempData["ErrorMessage"];
 
             var data = OfficeProcessor.LoadOffices();
             List<OfficeModel> offices = new List<OfficeModel>();
@@ -62,6 +64,15 @@ namespace MVC_CRUD_Project.Controllers
                     IsHQ = item.isHQ,
                     Company = new CompanyModel { Id = currentCompany.Id, Name = currentCompany.Name, CreationDate = currentCompany.CreationDate }
                 });
+            }
+
+            if (address != null)
+            {
+                string addressLowerCase = address.ToLower();
+
+                offices = offices.Select(o => o).Where(o => o.Country.ToLower().Contains(addressLowerCase) ||
+                                                            o.City.ToLower().Contains(addressLowerCase) ||
+                                                            o.Street.ToLower().Contains(addressLowerCase)).ToList();
             }
 
             return View(offices);
@@ -92,6 +103,10 @@ namespace MVC_CRUD_Project.Controllers
         public ActionResult Delete(int Id)
         {
             int deletedOffice = OfficeProcessor.DeleteOffice(Id);
+            if (deletedOffice == 0)
+            {
+                TempData["ErrorMessage"] = "Could not delete record!";
+            }
 
             return RedirectToAction("ListAll");
         }

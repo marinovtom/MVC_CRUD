@@ -1,14 +1,20 @@
 ﻿@model IEnumerable<MVC_CRUD_Project.Models.EmployeeModel>
 
 @{
-    ViewBag.Title = "ListAll";
+    ViewBag.Title = "All Employees";
 }
 
-<h2>ListAll</h2>
+    <h2>@ViewBag.Title</h2>
 
 <p class="btn btn-default stretched-link">
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @style = "text-decoration: none;" })
 </p>
+<form asp-controller="Company" asp-action="ListAll" method="get">
+    <div class="form-group">
+        Name: <input type="text" name="name" class="form-control" />
+        <input type="submit" value="Filter" class="btn btn-primary" />
+    </div>
+</form>
 <table class="table">
     <tr class="active">
         <th>
@@ -32,32 +38,32 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.FirstName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.LastName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.StartingDate)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Salary)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.VacationDays)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ExperienceLevel)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VacationDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ExperienceLevel)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class= "btn btn-default stretched-link" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger stretched-link" })
+            </td>
+        </tr>
+    }
 
 </table>

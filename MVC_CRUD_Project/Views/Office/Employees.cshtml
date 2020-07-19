@@ -7,10 +7,10 @@
 <h2>Employees</h2>
 
 <p>
-    @Html.ActionLink("Add employee", "AddEmployeeToOffice", new { id = ViewBag.CurrentOfficeId })
+    @Html.ActionLink("Add employee", "AddEmployeeToOffice", new { id = ViewBag.CurrentOfficeId }, new { @class = "btn btn-default stretched-link" })
 </p>
 <table class="table">
-    <tr>
+    <tr class="active">
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
         </th>
@@ -52,7 +52,7 @@
         @Html.DisplayFor(modelItem => item.ExperienceLevel)
     </td>
     <td>
-        @Html.ActionLink("Remove employee", "RemoveEmployeeFromOffice", new { id = item.Id, officeId = item.OfficeId })
+        @Html.ActionLink("Remove employee", "RemoveEmployeeFromOffice", new { id = item.Id, officeId = item.OfficeId }, new { @class = "btn btn-danger stretched-link" })
     </td>
 </tr>
 }
