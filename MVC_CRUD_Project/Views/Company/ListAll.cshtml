@@ -9,6 +9,12 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<form asp-controller="Company" asp-action="ListAll" method="get">
+    <p>
+        Name: <input type="text" name="name" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
 <table class="table">
     <tr>
         <th>

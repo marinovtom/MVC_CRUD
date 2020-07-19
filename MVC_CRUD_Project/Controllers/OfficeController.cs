@@ -129,5 +129,49 @@ namespace MVC_CRUD_Project.Controllers
 
             //return View();
         }
+
+        public ActionResult Employees(int id)
+        {
+            List<EmployeeModel> employees = new List<EmployeeModel>();
+            var data = OfficeProcessor.getEmployeesForOfficeId(id);
+            foreach (var item in data)
+            {
+                employees.Add(new EmployeeModel { Id = item.Id, FirstName = item.FirstName, LastName = item.LastName, StartingDate = item.StartingDate, 
+                                Salary = item.Salary, VacationDays = item.VacationDays, ExperienceLevel = item.ExperienceLevel, OfficeId = id });
+            }
+
+            ViewBag.CurrentOfficeId = id;
+
+            return View(employees);
+        }
+
+        public ActionResult AddEmployeeToOffice(int id)
+        {
+            var data = EmployeeProcessor.LoadAllEmployees();
+            var employees = data.Select(e => new { text = e.FirstName + " " + e.LastName, value = e.Id }).ToList();
+
+            EmployeeModel currentOfficeId = new EmployeeModel { OfficeId = id };
+
+            ViewBag.EmployeeNamesList = new SelectList(employees, "value", "text");
+            ViewBag.CurrentOfficeId = id;
+
+            return View(currentOfficeId);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddEmployeeToOffice(EmployeeModel employee)
+        {
+            int addedEmployeeToOffice = OfficeEmployeeProcessor.AddEmployeeToOffice(employee.Id, employee.OfficeId);
+
+            return RedirectToAction("Employees", new { id = employee.OfficeId });
+        }
+
+        public ActionResult RemoveEmployeeFromOffice(int id, int officeId)
+        {
+            int removedEmployee = OfficeEmployeeProcessor.RemoveEmployeeFromOffice(id, officeId);
+
+            return RedirectToAction("Employees", new { id = officeId });
+        }
     }
 }

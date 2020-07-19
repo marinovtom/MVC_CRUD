@@ -72,5 +72,17 @@ namespace DataLibrary.BusinessLogic
 
             return SqlDataAccess.UpdateData(sql, office);
         }
+
+        public static List<EmployeeModel> getEmployeesForOfficeId(int id)
+        {
+            var args = new { Id = id };
+
+            /*string sql = @"select * from dbo.Employee t1
+                                inner join dbo.OfficeEmployee t2 on t1.Id = t2.Employee
+                                    where t2.Office = @Id";*/
+            string sql = "select * from dbo.Employee where Id in (select Employee from dbo.OfficeEmployee where Office = @Id)";
+
+            return SqlDataAccess.getAllForId<EmployeeModel>(sql, args);
+        }
     }
 }

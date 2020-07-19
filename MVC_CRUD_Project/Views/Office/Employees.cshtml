@@ -1,0 +1,62 @@
+﻿@model IEnumerable<MVC_CRUD_Project.Models.EmployeeModel>
+
+@{
+    ViewBag.Title = "Employees";
+}
+
+<h2>Employees</h2>
+
+<p>
+    @Html.ActionLink("Add employee", "AddEmployeeToOffice", new { id = ViewBag.CurrentOfficeId })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VacationDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExperienceLevel)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.FirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StartingDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Salary)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.VacationDays)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ExperienceLevel)
+    </td>
+    <td>
+        @Html.ActionLink("Remove employee", "RemoveEmployeeFromOffice", new { id = item.Id, officeId = item.OfficeId })
+    </td>
+</tr>
+}
+</table>
+<p>
+    @Html.ActionLink("Return to Office List", "ListAll")
+</p>

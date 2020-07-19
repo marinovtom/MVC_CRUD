@@ -18,7 +18,7 @@ namespace MVC_CRUD_Project.Controllers
             return View();
         }
 
-        public ActionResult ListAll()
+        public ActionResult ListAll(string name)
         {
             ViewBag.Message = "List all Companies";
 
@@ -28,6 +28,11 @@ namespace MVC_CRUD_Project.Controllers
             foreach (var row in data)
             {
                 companies.Add(new CompanyModel { Id = row.Id, Name = row.Name, CreationDate = row.CreationDate });
+            }
+
+            if(name != null)
+            {
+                companies = companies.Select(c => c).Where(c => c.Name.Contains(name)).ToList();
             }
 
             return View(companies);

@@ -89,5 +89,13 @@ namespace DataLibrary.DataAccess
                 return cnn.QueryFirst<EmployeeModel>(sql, args);
             }
         }
+
+        public static List<T> getAllForId<T>(string sql, Object args)
+        {
+            using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
+            {
+                return cnn.Query<T>(sql, args).ToList();
+            }
+        }
     }
 }

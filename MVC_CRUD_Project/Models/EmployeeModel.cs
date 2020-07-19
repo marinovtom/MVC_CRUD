@@ -23,6 +23,8 @@ namespace MVC_CRUD_Project.Models
         public short VacationDays { get; set; }
         [Required]
         public ExperienceLevel ExperienceLevel { get; set; }
+        public int OfficeId { get; set; }
+        public string FullName { get; set; }
         //[Required]
         //public byte[] Image { get; set; }
     }

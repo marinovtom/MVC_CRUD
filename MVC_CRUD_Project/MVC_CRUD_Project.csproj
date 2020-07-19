@@ -236,6 +236,8 @@
     <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
     <Content Include="Views\OfficeEmployee\ListAll.cshtml" />
+    <Content Include="Views\Office\Employees.cshtml" />
+    <Content Include="Views\Office\AddEmployeeToOffice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
