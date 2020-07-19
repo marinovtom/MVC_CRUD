@@ -7,3 +7,5 @@ D:\Me\MVC_CRUD\MVC_CRUD\DataLibrary\bin\Debug\Dapper.dll
 D:\Me\MVC_CRUD\MVC_CRUD\DataLibrary\bin\Debug\Dapper.xml
 D:\Me\MVC_CRUD\MVC_CRUD\DataLibrary\obj\Debug\DataLibrary.csproj.CopyComplete
 D:\Me\MVC_CRUD\MVC_CRUD\DataLibrary\obj\Debug\DataLibrary.csprojAssemblyReference.cache
+D:\Me\MVC_CRUD\MVC_CRUD\DataLibrary\bin\Debug\Newtonsoft.Json.dll
+D:\Me\MVC_CRUD\MVC_CRUD\DataLibrary\bin\Debug\Newtonsoft.Json.xml
